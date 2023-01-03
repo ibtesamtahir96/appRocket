@@ -1,0 +1,12 @@
+<p>contacts works!</p>
+<div *ngIf="(searchedContacts==undefined ||  searchedContacts=='')">
+    <div *ngFor="let name of masterArray">
+        <p>{{name.name}}</p>
+    </div>
+</div>
+<div *ngIf="searchedContacts">
+    <div *ngFor="let name of searchedContacts">
+        <p>{{name.name}}</p>
+    </div>
+</div>
+
