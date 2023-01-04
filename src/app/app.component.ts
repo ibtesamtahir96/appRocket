@@ -16,19 +16,42 @@ export class AppComponent {
   contacts = [
     {
       name : 'ibtesam' , 
-      id : 20
+      id : 20,
+      messages : [
+        {
+          id : 1,
+          message : "Welcome Abroad"
+        } , 
+        {
+          id : 2 , 
+          message : 'AppRocket is awesome company !)'
+        }
+      ]
+
     },
     {
       name : 'inzamam',
-      id : 10
+      id : 10,
+      messages : [
+        {
+          id : 1,
+          message : "Welcome Abroad message no 2"
+        } , 
+        {
+          id : 2 , 
+          message : 'Im leaving Pakistan forever !)'
+        }
+      ]
     },
     {
       name : 'ihtisham' , 
-      id : 11
+      id : 11 , 
+      messages : []
     },
     {
       name : 'hassan' , 
-      id : 11
+      id : 11,
+      messages : []
     }
   ];
 
@@ -51,13 +74,11 @@ export class AppComponent {
     const modalRef = this.customModel.showFeaturedDialog(CreateGroupComponent, this.contacts);
     modalRef.componentInstance.passEntry.subscribe((receivedEntry) => {  
       console.log("Received Dataaaaaaaaaaaaaa",receivedEntry);
-      setTimeout(() => {
-        this.groups.push(receivedEntry);
-      }, 1000);
-      
+      this.groups.push(receivedEntry[0]);
+      console.log("Groups Array", this.groups);
     });
 
-    console.log("Groups Array", this.groups);
+    
     
   }
 }
