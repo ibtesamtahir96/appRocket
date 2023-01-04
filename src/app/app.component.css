@@ -1,0 +1,85 @@
+.div-left{
+    border: 2px solid black;
+    height: 500px;
+    width: 400px;
+}
+.div-right{
+    height: 500px;
+    width: 800px;
+    border: 2px solid black;
+}
+.text-bold{
+    font-weight: bold;
+    font-size: 30px;
+    padding: 20px 10px 10px 50px;
+}
+.border-custom{
+    border: 2px solid black;
+    height: 100px;
+    width: 100%;
+}
+.circle-input{
+    border-radius: 30px;
+    margin-left: 40px;
+}
+.custom-border-contact{
+   border-top: 2px solid black;
+    height: 300px;
+    width: auto;
+    padding: 30px;
+    font-size: 20px;
+    min-height: 400px;
+    overflow: auto;
+
+}
+.custom-col-gap{
+    column-gap: 23px;
+}
+.p-10{
+    padding: 10px;
+}
+.d-flex{
+    padding-top: 23px;
+}
+.body-text{
+    border-bottom: 2px solid black;
+    height: 300px;
+}
+.footer-input{
+width: 100%;
+padding: 33px;
+}
+.gap-3 {
+    column-gap: 10px;
+}
+
+
+
+
+/* popUp css */
+.pop-up-contacts{
+    border-top: 2px solid black;
+    height: 300px;
+    width: 300px;
+    padding: 30px;
+    font-size: 20px;
+    min-height: 400px;
+    overflow: auto;
+
+}
+.main-popup{
+    padding: 50px;
+}
+.custom-text{
+    font-size: 30px;
+    font-weight: bold;
+}
+textarea{
+    height: 300px;
+    width: 500px;
+}
+.custom-width{
+    width: 500px;
+    display: flex;
+    justify-content: end;
+}

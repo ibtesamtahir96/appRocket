@@ -10,8 +10,9 @@ export class InputBoxComponent implements OnInit {
   @Input() label: string;
   @Input() width: string;
   @Input() height : string;
-  @Input() placeHolder : string = ' '
+  @Input() placeHolder : string = ''
   @Output() inputChanged : EventEmitter<any> = new EventEmitter();
+  @Input() borderRadius: string;
   
   constructor() { }
 

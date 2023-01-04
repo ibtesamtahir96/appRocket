@@ -1,2 +1,7 @@
-<p>input-box works!</p>
-<input type="text" (keyup)="inputChange($event)">
+
+<input 
+    type="text" 
+    [ngStyle]="{'height' : height, 'width': width, 'border-radius': borderRadius}"
+    [placeholder]="placeHolder"
+
+    (keyup)="inputChange($event)">

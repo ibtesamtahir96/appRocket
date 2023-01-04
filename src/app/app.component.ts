@@ -1,5 +1,8 @@
+import { CreateGroupComponent } from './create-group/create-group.component';
+import { ModalService } from './modal.service';
 import { SearchService } from './search.service';
 import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -29,17 +32,12 @@ export class AppComponent {
     }
   ];
 
-  groups = [
-    {
-      contacts : [],
-      messages: [],
-      groupName: ''
-    }
-  ]
+  groups = [];
 
-  constructor(private searchText: SearchService){
-
-  }
+  constructor(private searchText: SearchService,
+    public activeModal: NgbActiveModal,
+    private customModel:ModalService,
+    ){}
 
   search(event){
     console.log("Typed Text", event);
@@ -48,5 +46,18 @@ export class AppComponent {
   openGroupDialogue(){
     debugger;
     //pass Array of Contacts to the dialogue
+  }
+  createGroup(){
+    const modalRef = this.customModel.showFeaturedDialog(CreateGroupComponent, this.contacts);
+    modalRef.componentInstance.passEntry.subscribe((receivedEntry) => {  
+      console.log("Received Dataaaaaaaaaaaaaa",receivedEntry);
+      setTimeout(() => {
+        this.groups.push(receivedEntry);
+      }, 1000);
+      
+    });
+
+    console.log("Groups Array", this.groups);
+    
   }
 }

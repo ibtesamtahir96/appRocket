@@ -1,0 +1,19 @@
+<div class="main-popup">
+    <div class="row m-0 justify-content-between">
+        <p class="custom-text">Create Group</p>
+        <div><i class="fa-solid fa-xmark custom-text"></i></div>
+    </div>
+    
+    <div>
+        <app-input-box [placeHolder]="'Group Name'" (inputChanged)="input($event)"></app-input-box>
+        <!-- <input type="text" placeholder="Group Name"> -->
+    </div>
+    <p>Select all the members of your group</p>
+    <div class="pop-up-contacts">
+        <div *ngFor="let contact of data">
+            <input (change)="selectedContactsArray(contact,checkbox.checked)" #checkbox type="checkbox">{{contact.name}}
+        </div>
+        <button class="btn btn-danger" (click)="createGroup()">Create</button>
+       
+      </div>
+</div>

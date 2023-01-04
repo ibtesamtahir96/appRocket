@@ -9,9 +9,10 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 export class ContactsComponent implements OnInit, OnChanges {
   @Input() searchContact;
   @Input() masterArray;
-  searchedContacts = [];
+  searchedContacts:any = [];
   
   constructor(private searchService: SearchService) { }
+  
   ngOnChanges(changes: SimpleChanges): void {
     let array = this.masterArray
     this.searchedContacts = [];

@@ -1,3 +1,7 @@
+import { CommonModule } from '@angular/common';
+import { CreateGroupComponent } from './create-group/create-group.component';
+import { ModalService } from './modal.service';
+import { NgbModal, NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,13 +18,16 @@ import { GroupsComponent } from './groups/groups.component';
     InputBoxComponent,
     ButtonComponent,
     ContactsComponent,
-    GroupsComponent
+    GroupsComponent,
+    CreateGroupComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [ModalService, NgbActiveModal, NgbModal],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
