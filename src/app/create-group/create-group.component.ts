@@ -11,13 +11,7 @@ export class CreateGroupComponent implements OnInit {
   @Output() dataReceivedFromDialog = new EventEmitter<any>();
   groupName = '';
   selectedContacts = [];
-  newGroup = [
-    {
-      contacts: [],
-      messages: [],
-      groupName: ''
-    }
-  ];
+  
   constructor(private activeModal: NgbActiveModal) { }
 
   ngOnInit(): void {
@@ -28,6 +22,7 @@ export class CreateGroupComponent implements OnInit {
     this.groupName = event;
     console.log("Group Name", this.groupName);
   }
+
   selectedContactsArray(contact,isChecked){
     console.log('Contact' , contact);
     console.log("Checkbox", isChecked);
@@ -45,8 +40,8 @@ export class CreateGroupComponent implements OnInit {
           if(i==this.selectedContacts.length-1){
             const obj = {
               name: contact.name,
-            id: contact.id,
-            isChecked: isChecked
+              id: contact.id,
+              isChecked: isChecked
             }
             this.selectedContacts.push(obj);
           }     

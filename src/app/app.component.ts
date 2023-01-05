@@ -10,11 +10,10 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnChanges{
+export class AppComponent{
   title = 'appRocket';
-  searchedName;
+  searchedName: string;
   name="New Group"
-  receivedBroadcastMessage;
   chatName;
   messageArray;
   contacts = [
@@ -66,10 +65,6 @@ export class AppComponent implements OnChanges{
     private customModel:ModalService,
     ){}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("Broadcast Message", this.receivedBroadcastMessage);
-  }
-
   search(event){
     console.log("Typed Text", event);
     this.searchedName = event;
@@ -79,7 +74,6 @@ export class AppComponent implements OnChanges{
     const modalRef = this.customModel.showFeaturedDialog(CreateGroupComponent, this.contacts);
     modalRef.componentInstance.dataReceivedFromDialog.subscribe((receivedData) => {  
       console.log("Received Dataaaaaaaaaaaaaa",receivedData);
-      // this.groups.push(receivedData[0]);
       
       let copyGroups = [...this.groups];
       copyGroups.push(receivedData[0]);
@@ -91,7 +85,6 @@ export class AppComponent implements OnChanges{
     const modalRef = this.customModel.showFeaturedDialog(SendBroadcastComponent, '');
     modalRef.componentInstance.dataReceivedFromDialog.subscribe((receivedData) => {  
       console.log("Received Dataaaaaaaaaaaaaa",receivedData);
-      this.receivedBroadcastMessage = receivedData;
 
       this.contacts.forEach((contact,index) => {
         contact.messages.push({
