@@ -1,7 +1,8 @@
+import { SendBroadcastComponent } from './send-broadcast/send-broadcast.component';
 import { CreateGroupComponent } from './create-group/create-group.component';
 import { ModalService } from './modal.service';
 import { SearchService } from './search.service';
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -9,10 +10,13 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnChanges{
   title = 'appRocket';
-  searchValue;
+  searchedName;
   name="New Group"
+  receivedBroadcastMessage;
+  chatName;
+  messageArray;
   contacts = [
     {
       name : 'ibtesam' , 
@@ -62,23 +66,54 @@ export class AppComponent {
     private customModel:ModalService,
     ){}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("Broadcast Message", this.receivedBroadcastMessage);
+  }
+
   search(event){
     console.log("Typed Text", event);
-    this.searchValue = event;
+    this.searchedName = event;
   }
-  openGroupDialogue(){
-    debugger;
-    //pass Array of Contacts to the dialogue
-  }
-  createGroup(){
+  
+  openGroupDialog(){
     const modalRef = this.customModel.showFeaturedDialog(CreateGroupComponent, this.contacts);
-    modalRef.componentInstance.passEntry.subscribe((receivedEntry) => {  
-      console.log("Received Dataaaaaaaaaaaaaa",receivedEntry);
-      this.groups.push(receivedEntry[0]);
+    modalRef.componentInstance.dataReceivedFromDialog.subscribe((receivedData) => {  
+      console.log("Received Dataaaaaaaaaaaaaa",receivedData);
+      // this.groups.push(receivedData[0]);
+      
+      let copyGroups = [...this.groups];
+      copyGroups.push(receivedData[0]);
+      this.groups = copyGroups;
       console.log("Groups Array", this.groups);
-    });
+    });  
+  }
+  openBroadcastDialog(){
+    const modalRef = this.customModel.showFeaturedDialog(SendBroadcastComponent, '');
+    modalRef.componentInstance.dataReceivedFromDialog.subscribe((receivedData) => {  
+      console.log("Received Dataaaaaaaaaaaaaa",receivedData);
+      this.receivedBroadcastMessage = receivedData;
 
-    
-    
+      this.contacts.forEach((contact,index) => {
+        contact.messages.push({
+          id : index,
+          message : receivedData
+        });
+      });
+      
+      console.log("Contact Messages", this.contacts);
+    }); 
+  }
+
+  chat(event){
+    this.chatName = event;
+    console.log("Chat",this.chatName.messages);
+  }
+
+  textAreaData(text){
+    console.log("Messsage Box Main Page", text)
+    this.chatName.messages.push({
+      id : this.chatName.messages.length,
+      message : text
+    })
   }
 }

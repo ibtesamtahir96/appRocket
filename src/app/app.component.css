@@ -43,7 +43,7 @@
 }
 .body-text{
     border-bottom: 2px solid black;
-    height: 300px;
+    height: auto;
 }
 .footer-input{
 width: 100%;
@@ -52,7 +52,10 @@ padding: 33px;
 .gap-3 {
     column-gap: 10px;
 }
-
+.custom-message-box{
+    min-height: 317px;
+    overflow: auto;
+}
 
 
 
@@ -82,4 +85,7 @@ textarea{
     width: 500px;
     display: flex;
     justify-content: end;
+}
+.custom-group-box{
+    border-top: 1px solid black;
 }

@@ -1,7 +1,6 @@
-<p>contacts works!</p>
 <div *ngIf="(searchedContacts==undefined || searchedContacts=='')">
     <div *ngFor="let name of masterArray">
-        <p>{{name.name}}</p>
+        <p (click)="selectedChat(name)">{{name.name}}</p>
     </div>
 </div>
 <div *ngIf="searchedContacts">

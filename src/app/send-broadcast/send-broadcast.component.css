@@ -1,0 +1,26 @@
+.pop-up-contacts{
+    border-top: 2px solid black;
+    height: 300px;
+    width: 300px;
+    padding: 30px;
+    font-size: 20px;
+    min-height: 400px;
+    overflow: auto;
+
+}
+.main-popup{
+    padding: 50px;
+}
+.custom-text{
+    font-size: 30px;
+    font-weight: bold;
+}
+textarea{
+    height: 300px;
+    width: 400px;
+}
+.custom-width{
+    width: 300px;
+    display: flex;
+    justify-content: end;
+}

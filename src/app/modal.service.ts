@@ -29,9 +29,9 @@ export class ModalService {
       modalRef.componentInstance.dates = data;
       modalRef.componentInstance.modelData = data;
 
-      modalRef.componentInstance.passEntry.subscribe((receivedEntry) => {
-        console.log("Received Data",receivedEntry);
-      })
+      // modalRef.componentInstance.dataReceivedFromDialog.subscribe((receivedData) => {
+      //   console.log("Received Data",receivedData);
+      // })
       
       return modalRef;
     }

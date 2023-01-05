@@ -8,18 +8,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputBoxComponent } from './input-box/input-box.component';
-import { ButtonComponent } from './button/button.component';
+// import { ButtonComponent } from './button/button.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { GroupsComponent } from './groups/groups.component';
+import { SendBroadcastComponent } from './send-broadcast/send-broadcast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputBoxComponent,
-    ButtonComponent,
     ContactsComponent,
     GroupsComponent,
-    CreateGroupComponent
+    CreateGroupComponent,
+    SendBroadcastComponent
   ],
   imports: [
     BrowserModule,

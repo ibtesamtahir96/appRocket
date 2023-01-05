@@ -8,7 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class CreateGroupComponent implements OnInit {
   @Input() data;
-  @Output() passEntry = new EventEmitter<any>();
+  @Output() dataReceivedFromDialog = new EventEmitter<any>();
   groupName = '';
   selectedContacts = [];
   newGroup = [
@@ -68,7 +68,7 @@ export class CreateGroupComponent implements OnInit {
     ]
     console.log("Send Array", array);
     this.activeModal.close(CreateGroupComponent);
-    this.passEntry.emit(array);
+    this.dataReceivedFromDialog.emit(array);
   }
 
 }

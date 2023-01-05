@@ -1,72 +1,36 @@
-<app-input-box (inputChanged)="search($event)"></app-input-box>
-<app-button [btnName]="name" (click)="openGroupDialogue()"></app-button>
-<app-contacts [searchContact]="searchValue" [masterArray]="contacts"></app-contacts>
-<app-groups [masterArray]="groups"></app-groups>
-
-
-<!--  -->
-
-
     <div class="custom-card justify-content-center d-flex">
       <div class="div-left">
         <div class="p-10">
           <app-input-box [placeHolder]="'search'" [borderRadius]="'30px'" (inputChanged)="search($event)"></app-input-box>
           <div class="d-flex custom-col-gap">
-            <a (click)="createGroup()" href="#">Add a new Group</a>
-            <a href="#">Send a Broadcast</a>
+            <a (click)="openGroupDialog()" href="#">Add a new Group</a>
+            <a (click)="openBroadcastDialog()" href="#">Send a Broadcast</a>
           </div>
         </div>
         <div class="custom-border-contact">
-            <app-contacts [searchContact]="searchValue" [masterArray]="contacts"></app-contacts>
-          <!-- <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div>
-          <div>Contact 1</div> -->
+            <div>
+                <h6 [ngStyle]="{'color': 'blue'}">All Contacts</h6>
+            <app-contacts [searchContact]="searchedName" (selectedContact)="chat($event)" [masterArray]="contacts"></app-contacts>
+            </div>
+            <div class="custom-group-box">
+                <h6 [ngStyle]="{'color': 'blue'}">All Groups</h6>
+                <div>
+                    <app-groups [masterArray]="groups"></app-groups>
+                </div>
+            </div>
         </div>
       </div>
       <div class="div-right">
         <div class="border-custom">
-          <p class="text-bold">Contact 99</p>
+          <p *ngIf="!chatName"class="text-bold" >Select Contact</p>
+          <p *ngIf="chatName"class="text-bold" >{{chatName.name}}</p>
         </div>
-        <div class="body-text"></div>
+        <div class="custom-message-box">
+        <div class="body-text" *ngFor="let item of chatName?.messages">{{item.message}}</div>
+    </div>
         <div class="d-flex footer-input gap-3 ">
-          <input class="w-100" type="text" />
-          <button class="btn btn-primary">Send</button>
+          <input class="w-100" type="text" #text/>
+          <button class="btn btn-primary" (click)="textAreaData(text.value)">Send</button>
         </div>
       </div>
     </div>
-
-
-    <!-- pop up  -->
-
-
-
-<!--Text Area Pop  -->
-   
-<div class="main-popup">
-    <div class="row m-0 justify-content-between">
-<p class="custom-text">Send a Broadcast Message</p>
-<div><i class="fa-solid fa-xmark custom-text"></i></div>
-    </div>
-
-        <textarea></textarea>
-    
-    <div class="custom-width">
-        <button class="btn btn-danger">Send!</button>
-    </div>
-    
-</div>
