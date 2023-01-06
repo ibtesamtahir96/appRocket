@@ -1,0 +1,22 @@
+label{
+    margin-left: 5px;
+}
+.main-popup{
+    padding: 15px;
+    height: 500px;
+}
+
+.pop-up-contacts{
+display: flex;
+flex-direction: column;
+row-gap: 10px;
+max-height: 300px;
+overflow: auto;
+
+}
+.custom-text{
+    font-size: 20px;
+    color: rgb(0, 56, 146);
+    font-weight: bold;
+   
+}

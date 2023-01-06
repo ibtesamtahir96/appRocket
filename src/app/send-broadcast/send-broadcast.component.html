@@ -1,13 +1,13 @@
 <div class="main-popup">
-    <div class="row m-0 justify-content-between">
+    <div class="d-flex justify-content-between">
 <p class="custom-text">Send a Broadcast Message</p>
-<div><i class="fa-solid fa-xmark custom-text"></i></div>
+<div><i (click)="activeModal.close('Close click')" class="fa-solid fa-xmark custom-text"></i></div>
     </div>
 
         <textarea #textArea></textarea>
     
     <div class="custom-width">
-        <button class="btn btn-danger" (click)="textAreaData(textArea.value)">Send!</button>
+        <button class="btn btn-primary" (click)="textAreaData(textArea.value)">Send!</button>
     </div>
     
 </div>

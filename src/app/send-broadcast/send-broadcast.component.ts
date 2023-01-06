@@ -8,7 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class SendBroadcastComponent implements OnInit {
   @Output() dataReceivedFromDialog = new EventEmitter<any>();
-  constructor(private activeModal: NgbActiveModal) { }
+  constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit(): void {
   }

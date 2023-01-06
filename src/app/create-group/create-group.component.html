@@ -1,18 +1,23 @@
 <div class="main-popup">
-    <div class="row m-0 justify-content-between">
+    <div class="d-flex justify-content-between">
         <p class="custom-text">Create Group</p>
-        <div><i class="fa-solid fa-xmark custom-text"></i></div>
+        <div><i (click)="activeModal.close('Close click')" class="fa-solid fa-xmark custom-text"></i></div>
     </div>
     
     <div>
         <app-input-box [placeHolder]="'Group Name'" (inputChanged)="input($event)"></app-input-box>
     </div>
-    <p>Select all the members of your group</p>
-    <div class="pop-up-contacts">
+    <h5 class="mb-0 pt-2">Select all the members of your group</h5>
+    <div class="pop-up-contacts pt-2">
         <div *ngFor="let contact of data">
-            <input (change)="selectedContactsArray(contact,checkbox.checked)" #checkbox type="checkbox">{{contact.name}}
+            <input (change)="selectedContactsArray(contact,checkbox.checked)" #checkbox type="checkbox">
+            <label>{{contact.name}}</label>
+            
         </div>
-        <button class="btn btn-danger" (click)="createGroup()">Create</button>
-       
       </div>
+      <div class="pt-2"> 
+        <button class="btn btn-primary w-100
+      " (click)="createGroup()">Create</button>
+      </div>
+      
 </div>

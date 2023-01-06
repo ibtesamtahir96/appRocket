@@ -9,18 +9,18 @@
 
 }
 .main-popup{
-    padding: 50px;
+    padding: 20px;
 }
 .custom-text{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
 }
 textarea{
     height: 300px;
-    width: 400px;
+    width: 100%
 }
 .custom-width{
-    width: 300px;
+   
     display: flex;
     justify-content: end;
 }

@@ -11,8 +11,8 @@ export class CreateGroupComponent implements OnInit {
   @Output() dataReceivedFromDialog = new EventEmitter<any>();
   groupName = '';
   selectedContacts = [];
-  
-  constructor(private activeModal: NgbActiveModal) { }
+
+  constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit(): void {
     console.log("Contacts Data Dialogue", this.data); 
