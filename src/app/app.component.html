@@ -2,7 +2,7 @@
       <div class="div-left">
         <div class="p-10">
          <div class="pl-3">
-            <app-input-box [placeHolder]="'search'" [borderRadius]="'30px'" (inputChanged)="search($event)"></app-input-box>
+            <app-input-box [placeHolder]="'Search Contact'" [borderRadius]="'30px'" (inputChanged)="search($event)"></app-input-box>
         </div>
             <div class="d-flex custom-col-gap">
             <a (click)="openGroupDialog()" href="#">Add a new Group</a>
@@ -15,8 +15,7 @@
             <div class="contact-group">
                 <h6>All Contacts</h6>
                 <div class="custom-border-contact">
-            <app-contacts [searchContact]="searchedName" (selectedContact)="chat($event)" [masterArray]="contacts"></app-contacts>
-            <app-contacts [searchContact]="searchedName" (selectedContact)="chat($event)" [masterArray]="contacts"></app-contacts>    
+            <app-contacts [searchContact]="searchedName" (selectedContact)="chat($event)" [masterArray]="contacts"></app-contacts>  
         </div>
         </div>
 

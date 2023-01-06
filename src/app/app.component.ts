@@ -27,7 +27,7 @@ export class AppComponent{
         } , 
         {
           id : 2 , 
-          message : 'AppRocket is awesome company !)'
+          message : 'AppRocket is awesome company !'
         }
       ]
 
@@ -42,99 +42,51 @@ export class AppComponent{
         } , 
         {
           id : 2 , 
-          message : 'Im leaving Pakistan forever !)'
+          message : 'Im leaving Pakistan forever !'
         }
       ]
     },
     {
       name : 'ihtisham' , 
       id : 11 , 
-      messages : []
+      messages : [
+        {
+          id : 1,
+          message : "Welcome Abroad message no 3"
+        } , 
+        {
+          id : 2 , 
+          message : 'Im leaving Pakistan forever yaayyyy!'
+        }
+      ]
     },
     {
       name : 'hassan' , 
       id : 11,
-      messages : []
+      messages : [
+        {
+          id : 1,
+          message : "Welcome Abroad message no 4"
+        } , 
+        {
+          id : 2 , 
+          message : 'Im leaving Pakistan forever lalalal!'
+        }
+      ]
     },
     {
       name : 'hassan' , 
       id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
-    },
-    {
-      name : 'hassan' , 
-      id : 11,
-      messages : []
+      messages : [
+        {
+          id : 1,
+          message : "Welcome Abroad message no 5"
+        } , 
+        {
+          id : 2 , 
+          message : 'Im leaving Pakistan forever hurrayyyy!'
+        }
+      ]
     }
   ];
 
